@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -33,5 +34,13 @@ public class Promozione {
     @Column(name = "numero_ingressi", nullable = false)
     private int numeroIngressi;
 
-    // Costruttore, getter & setter
+    @ManyToMany
+    @JoinTable(
+            name = "promozione_modalita",
+            joinColumns = @JoinColumn(name = "id_promozione"),
+            inverseJoinColumns = @JoinColumn(name = "id_modalita")
+    )
+    private Set<Modalita> modalitaCoperte;
+
+    // Getter & Setter
 }

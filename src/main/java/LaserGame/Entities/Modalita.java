@@ -32,12 +32,18 @@ public class Modalita {
     @Column(nullable = false)
     private Integer numeroMinPartecipanti;
 
-
     @Column(nullable = false)
     private Integer numeroMaxPartecipanti;
 
     @OneToMany(mappedBy = "laserGamePackage", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SlotOrario> slotAvailabilities;
 
-    // Getter & Setter
+    // Relazione ManyToMany con Abbonamento
+    @ManyToMany(mappedBy = "modalitaSet")
+    private Set<Abbonamento> abbonamenti;
+
+    @ManyToMany(mappedBy = "modalitaCoperte")
+    private Set<Promozione> promozioni;
+
+    // Getter & Setter (generati automaticamente da Lombok)
 }

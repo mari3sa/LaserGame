@@ -8,6 +8,8 @@ import lombok.ToString;
 import LaserGame.Utils.enumeration.StatoPrenotazione;
 import java.time.LocalDateTime;
 
+
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -22,7 +24,7 @@ public class Prenotazione {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private Utente user;
 
     @ManyToOne
     @JoinColumn(name = "id_modalita")

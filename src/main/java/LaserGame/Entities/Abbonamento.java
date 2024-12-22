@@ -8,6 +8,8 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -37,6 +39,14 @@ public class Abbonamento {
     @Column(name = "prezzo", nullable = false)
     private BigDecimal prezzo;
 
-    // Costruttore, getter & setter
+    // Relazione con Modalita
+    @ManyToMany
+    @JoinTable(
+            name = "abbonamento_modalita",
+            joinColumns = @JoinColumn(name = "id_abbonamento"),
+            inverseJoinColumns = @JoinColumn(name = "id_modalita")
+    )
+    private Set<Modalita> modalitaDisponibili;
+
 }
 

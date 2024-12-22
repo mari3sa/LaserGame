@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/InfoLaserGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Promozione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/SlotOrario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Utente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="file pom, properties e prime entity">
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/ModalitaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/UtenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Promozione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,40 +26,53 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mari3sa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mari3sa/LaserGame.git&quot;,
+    &quot;accountId&quot;: &quot;35c863e1-e076-4ed2-a626-637de7142a1b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2qUydyD00PpTPVGkwDxPDmbAj9s" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/39388/IdeaProjects/LaserGame/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/39388/IdeaProjects/LaserGame/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\39388\IdeaProjects\LaserGame\src\main\resources" />
@@ -85,8 +94,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734731543537</updated>
-      <workItem from="1734731544680" duration="4663000" />
+      <workItem from="1734731544680" duration="5319000" />
+      <workItem from="1734874864164" duration="4549000" />
     </task>
+    <task id="LOCAL-00001" summary="file pom, properties e prime entity">
+      <option name="closed" value="true" />
+      <created>1734736817856</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734736817856</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,5 +121,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="file pom, properties e prime entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="file pom, properties e prime entity" />
   </component>
 </project>
