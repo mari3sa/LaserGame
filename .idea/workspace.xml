@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="file pom, properties e prime entity">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/ModalitaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/UtenteRepository.java" afterDir="false" />
+    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="modifica entity con relazioni, creazione repository">
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/AbbonamentoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/InfoLaserGameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/ModalitaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PromozioneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/SlotOrarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/UtenteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Promozione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/SlotOrarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/SlotOrarioRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -95,7 +94,8 @@
       <option name="presentableId" value="Default" />
       <updated>1734731543537</updated>
       <workItem from="1734731544680" duration="5319000" />
-      <workItem from="1734874864164" duration="4549000" />
+      <workItem from="1734874864164" duration="4841000" />
+      <workItem from="1734952008306" duration="1874000" />
     </task>
     <task id="LOCAL-00001" summary="file pom, properties e prime entity">
       <option name="closed" value="true" />
@@ -105,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734736817856</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modifica entity con relazioni, creazione repository">
+      <option name="closed" value="true" />
+      <created>1734879979875</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734879979875</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="file pom, properties e prime entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="file pom, properties e prime entity" />
+    <MESSAGE value="modifica entity con relazioni, creazione repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica entity con relazioni, creazione repository" />
   </component>
 </project>

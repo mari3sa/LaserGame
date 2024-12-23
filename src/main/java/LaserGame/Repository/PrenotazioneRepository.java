@@ -18,10 +18,12 @@ public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long
     List<Prenotazione> findByUserId(Long userId);  // Restituisce le prenotazioni legate a un utente specifico
 
     // Trova le prenotazioni basate sulla data e stato di prenotazione
-    List<Prenotazione> findByDataAndStatus(@Param("data") LocalDateTime data, @Param("status") enumeration.StatoPrenotazione status);  // Restituisce le prenotazioni basate su data e stato di prenotazione
+    List<Prenotazione> findByData(@Param("data") LocalDateTime data);
+
+    List<Prenotazione> findByStatus(@Param("status") enumeration.StatoPrenotazione status);  // Restituisce le prenotazioni basate su data e stato di prenotazione
 
     // Trova le prenotazioni basate sulla modalità e lo stato
-    List<Prenotazione> findByModalitaAndStatus(@Param("modalita") Modalita modalita, @Param("status") enumeration.StatoPrenotazione status);  // Restituisce le prenotazioni basate su modalità e stato
+    List<Prenotazione> findByModalita(@Param("modalita") Modalita modalita);  // Restituisce le prenotazioni basate su modalità e stato
 
     // Trova le prenotazioni con numero partecipanti minore o uguale a un valore specifico
     List<Prenotazione> findByNumeroPartecipantiLessThanEqual(@Param("numeroPartecipanti") Integer numeroPartecipanti);  // Restituisce le prenotazioni con numero partecipanti ≤ valore specifico
