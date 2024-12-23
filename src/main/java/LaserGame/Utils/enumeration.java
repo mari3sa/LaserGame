@@ -11,5 +11,19 @@ public class enumeration {
         CLIENTE,
         ADMIN
     }
+
+    public enum TipoAbbonamento{
+        SETTIMANALE,
+        MENSILE,
+        ANNUALE
+    }
+
+
+    public enum StatoPagamento {
+        SUCCESSO,
+        FALLITO,
+        IN_ATTESA
+    }
+
 }
 

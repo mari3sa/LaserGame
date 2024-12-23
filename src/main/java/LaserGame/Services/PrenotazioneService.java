@@ -4,6 +4,7 @@ import LaserGame.Entities.Modalita;
 import LaserGame.Entities.Prenotazione;
 import LaserGame.Repository.PrenotazioneRepository;
 import LaserGame.Utils.enumeration;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,35 +18,42 @@ public class PrenotazioneService {
     @Autowired
     private PrenotazioneRepository prenotazioneRepository;
 
+    @Transactional
     // Trova tutte le prenotazioni
     public List<Prenotazione> getAllPrenotazioni() {
         return prenotazioneRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
     // Trova una prenotazione per ID
     public Optional<Prenotazione> getPrenotazioneById(Long id) {
         return prenotazioneRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
     // Trova prenotazioni per utente
     public List<Prenotazione> getPrenotazioniByUtenteId(Long utenteId) {
         return prenotazioneRepository.findByUserId(utenteId);
     }
 
+    @Transactional(readOnly = true)
     // Trova prenotazioni per data
     public List<Prenotazione> getPrenotazioniByData(LocalDateTime data) {
         return prenotazioneRepository.findByData(data);
     }
 
+    @Transactional(readOnly = true)
     public List<Prenotazione> getPrenotazioniByStatus(enumeration.StatoPrenotazione stato) {
         return prenotazioneRepository.findByStatus(stato);
     }
 
+    @Transactional
     // Crea una prenotazione
     public Prenotazione creaPrenotazione(Prenotazione prenotazione) {
         return prenotazioneRepository.save(prenotazione);
     }
 
+    @Transactional(readOnly = true)
     public List<Prenotazione> findByModalita(Modalita modalita) {
         return prenotazioneRepository.findByModalita(modalita);
     }
@@ -55,7 +63,33 @@ public class PrenotazioneService {
      * @param numeroPartecipanti Numero massimo di partecipanti.
      * @return Una lista di prenotazioni che soddisfano il criterio.
      */
+    @Transactional(readOnly = true)
     public List<Prenotazione> findByNumeroPartecipantiLessThanEqual(Integer numeroPartecipanti) {
         return prenotazioneRepository.findByNumeroPartecipantiLessThanEqual(numeroPartecipanti);
     }
+
+    private void validaPrenotazione(Prenotazione prenotazione) {
+        if (prenotazione.getUser() == null) {
+            throw new IllegalArgumentException("L'utente è obbligatorio.");
+        }
+        if (prenotazione.getModalita() == null) {
+            throw new IllegalArgumentException("La modalità è obbligatoria.");
+        }
+        if (prenotazione.getData() == null || prenotazione.getData().isBefore(LocalDateTime.now())) {
+            throw new IllegalArgumentException("La data deve essere valida e futura.");
+        }
+        if (prenotazione.getNumeroOre() == null || prenotazione.getNumeroOre() <= 0) {
+            throw new IllegalArgumentException("Il numero di ore deve essere maggiore di zero.");
+        }
+        if (prenotazione.getNumeroPartecipanti() == null || prenotazione.getNumeroPartecipanti() < 2) {
+            throw new IllegalArgumentException("Il numero minimo di partecipanti deve essere almeno 2.");
+        }
+        if (prenotazione.getNumeroPartecipanti() > 10) {
+            throw new IllegalArgumentException("Il numero massimo di partecipanti deve essere 10 o meno.");
+        }
+        if (prenotazione.getStatus() == null) {
+            throw new IllegalArgumentException("Lo stato della prenotazione è obbligatorio.");
+        }
+    }
+
 }

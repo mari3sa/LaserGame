@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Getter
@@ -27,7 +28,7 @@ public class Modalita {
     private String descrizione;
 
     @Column(nullable = false)
-    private Integer prezzo;
+    private BigDecimal prezzo;
 
     @Column(nullable = false)
     private Integer numeroMinPartecipanti;

@@ -8,10 +8,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import LaserGame.Utils.enumeration.TipoUtente;
-//Questa classe rappresenta un'entità più completa e dettagliata, destinata a essere persistente
-// nel database.
-//È un'entità JPA (Java Persistence API) che viene utilizzata per archiviare e recuperare dati
-//persistenti relativi all'utente.
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -23,7 +20,7 @@ public class Utente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -38,11 +35,9 @@ public class Utente {
     private String telefono;
 
     @Column(name = "dataiscrizione", nullable = false)
-    private LocalDate dataiscrizione;
+    private LocalDate dataIscrizione;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo", nullable = false)
     private TipoUtente tipo;
-
-
 }

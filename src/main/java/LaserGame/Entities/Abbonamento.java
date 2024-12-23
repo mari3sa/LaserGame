@@ -1,5 +1,6 @@
 package LaserGame.Entities;
 
+import LaserGame.Utils.enumeration;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -27,8 +28,9 @@ public class Abbonamento {
     @Column(name = "utente_id", nullable = false)
     private int utenteId; // Riferimento all'utente
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "tipo", nullable = false)
-    private String tipo; // Es. "Mensile", "Annuale", ecc.
+    private enumeration.TipoAbbonamento tipo; // Es. "Mensile", "Annuale", ecc.
 
     @Column(name = "data_inizio", nullable = false)
     private LocalDate dataInizio;
