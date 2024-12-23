@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,9 +67,10 @@ public class ModalitaService {
         if (modalita.getDescrizione() == null || modalita.getDescrizione().trim().isEmpty()) {
             throw new IllegalArgumentException("La descrizione della modalità è obbligatoria.");
         }
-        if (modalita.getPrezzo() == null || modalita.getPrezzo() <= 0) {
-            throw new IllegalArgumentException("Il prezzo non può essere negativo.");
+        if (modalita.getPrezzo() == null || modalita.getPrezzo().compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("Il prezzo della modalità è obbligatorio e deve essere maggiore di zero.");
         }
+
         if (modalita.getNumeroMinPartecipanti() == null || modalita.getNumeroMinPartecipanti() < 2) {
             throw new IllegalArgumentException("Il numero minimo di partecipanti deve essere almeno 2.");
         }

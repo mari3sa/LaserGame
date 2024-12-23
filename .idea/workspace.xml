@@ -4,35 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="services">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/CarrelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/PagamentoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/ArticoloCarrello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Carrello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Pagamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/ArticoloCarrelloRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/CarrelloRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PagamentoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Authentication/JwtAuthenticationConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Authentication/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/EncodingConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/CarrelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PagamentoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/AbbonamentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/AbbonamentoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/InfoLaserGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/InfoLaserGameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/ModalitaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/ModalitaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PromozioneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PromozioneService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/SlotOrarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/SlotOrarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/enumeration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="carrello, articolo carrello, pagamento, spring jwt, primi controller, security">
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/CarrelloService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,25 +44,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/39388/IdeaProjects/LaserGame/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/39388/IdeaProjects/LaserGame/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\39388\IdeaProjects\LaserGame\src\main\resources" />
@@ -114,7 +88,7 @@
       <workItem from="1734731544680" duration="5319000" />
       <workItem from="1734874864164" duration="4841000" />
       <workItem from="1734952008306" duration="2305000" />
-      <workItem from="1734959358829" duration="10763000" />
+      <workItem from="1734959358829" duration="11073000" />
     </task>
     <task id="LOCAL-00001" summary="file pom, properties e prime entity">
       <option name="closed" value="true" />
@@ -140,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734954322004</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="carrello, articolo carrello, pagamento, spring jwt, primi controller, security">
+      <option name="closed" value="true" />
+      <created>1734973656454</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734973656454</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +143,7 @@
     <MESSAGE value="file pom, properties e prime entity" />
     <MESSAGE value="modifica entity con relazioni, creazione repository" />
     <MESSAGE value="services" />
-    <option name="LAST_COMMIT_MESSAGE" value="services" />
+    <MESSAGE value="carrello, articolo carrello, pagamento, spring jwt, primi controller, security" />
+    <option name="LAST_COMMIT_MESSAGE" value="carrello, articolo carrello, pagamento, spring jwt, primi controller, security" />
   </component>
 </project>

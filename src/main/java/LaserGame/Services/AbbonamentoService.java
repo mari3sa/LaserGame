@@ -96,7 +96,7 @@ public class AbbonamentoService {
         if (abbonamento.getUtenteId() <= 0) {
             throw new IllegalArgumentException("L'ID utente è obbligatorio e deve essere un valore positivo.");
         }
-        if (abbonamento.getTipo() == null || abbonamento.getTipo().trim().isEmpty()) {
+        if (abbonamento.getTipo() == null || abbonamento.getTipo() == null) {
             throw new IllegalArgumentException("Il tipo di abbonamento è obbligatorio.");
         }
         if (abbonamento.getDataInizio() == null) {

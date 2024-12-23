@@ -36,7 +36,7 @@ public class CarrelloService {
     private PromozioneRepository promozioneRepository;
 
     public void aggiungiAlCarrello(Utente utente, Long modalitaId, Long abbonamentoId, Long promozioneId, int quantita) {
-        Optional<Carrello> optionalCarrello = carrelloRepository.findByUtenteId(utente.getId());
+        Optional<Carrello> optionalCarrello = carrelloRepository.findByUtenteId(Math.toIntExact(utente.getId()));
 
         Carrello carrello = optionalCarrello.orElseGet(() -> {
             Carrello nuovoCarrello = new Carrello();
@@ -95,7 +95,7 @@ public class CarrelloService {
 
     // Rimuovere un articolo dal carrello
     public void rimuoviDalCarrello(Utente utente, Long articoloCarrelloId) {
-        Carrello carrello = carrelloRepository.findByUtenteId(utente.getId())
+        Carrello carrello = carrelloRepository.findByUtenteId(Math.toIntExact(utente.getId()))
                 .orElseThrow(() -> new IllegalArgumentException("Carrello non trovato"));
 
         ArticoloCarrello articoloCarrello = articoloCarrelloRepository.findById(articoloCarrelloId)
@@ -106,7 +106,7 @@ public class CarrelloService {
 
     // Calcola il totale del carrello
     public BigDecimal calcolaTotale(Utente utente) {
-        Carrello carrello = carrelloRepository.findByUtenteId(utente.getId())
+        Carrello carrello = carrelloRepository.findByUtenteId(Math.toIntExact(utente.getId()))
                 .orElseThrow(() -> new IllegalArgumentException("Carrello non trovato"));
 
         return articoloCarrelloRepository.findTotaleByCarrelloId(carrello.getId());
