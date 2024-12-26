@@ -43,4 +43,6 @@ public class InfoLaserGame {
     @Column(nullable = false)
     private String longitude;
 
+    @Column(name = "codice", nullable = false)
+    private int codice_amministrativo;
 }

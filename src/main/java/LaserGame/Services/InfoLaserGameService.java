@@ -68,6 +68,10 @@ public class InfoLaserGameService {
         return infoLaserGameRepository.existsById(id);
     }
 
+    public boolean verificaCodiceAmministratore(int codice){
+        return InfoLaserGameRepository.existsByCodiceAmministrativo(codice);
+    }
+
     private void validaInfoLaserGame(InfoLaserGame infoLaserGame) {
         if (infoLaserGame.getNome() == null || infoLaserGame.getNome().trim().isEmpty()) {
             throw new IllegalArgumentException("Il nome è obbligatorio.");

@@ -25,5 +25,8 @@ public class enumeration {
         IN_ATTESA
     }
 
+    public final static String usernameAdmin= "pippo@gmail.com";
+    public final static String passwordAdmin = "pippo";
+
 }
 
