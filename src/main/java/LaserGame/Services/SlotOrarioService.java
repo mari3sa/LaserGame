@@ -1,10 +1,13 @@
 package LaserGame.Services;
 
+import LaserGame.Entities.Modalita;
 import LaserGame.Entities.SlotOrario;
+import LaserGame.Exception.FasciaOrariaInesistenteException;
 import LaserGame.Repository.SlotOrarioRepository;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -37,6 +40,14 @@ public class SlotOrarioService {
         return slotOrarioRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
+    public SlotOrario findById(long id) {
+        if (slotOrarioRepository.findById(id).isEmpty()){
+            throw new FasciaOrariaInesistenteException("Fascia Oraria non trovato");
+        }
+        return slotOrarioRepository.findById(id).get();
+    }
+
     /**
      * Trova slot orari per data specifica.
      *
@@ -67,9 +78,64 @@ public class SlotOrarioService {
      */
     @Transactional
     public SlotOrario creaSlotOrario(SlotOrario slotOrario) {
+        validaSlotOrario(slotOrario);
         return slotOrarioRepository.save(slotOrario);
     }
 
+    @Transactional(readOnly = true)
+    public List<SlotOrario> findAll() {
+        boolean isAdmin = SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+        if (!isAdmin) {
+            throw new SecurityException("Utente non autorizzato");
+        }
+        return slotOrarioRepository.findAll();
+    }
+
+    /**
+     * Crea uno slot orario utilizzando un ID di servizio, l'inizio e il giorno specifici.
+     *
+     * @param modalitaId        ID della modalità.
+     * @param dataInizio         Data e ora di inizio.
+     * @param orariDisponibili   Numero di orari disponibili.
+     * @return Lo slot orario creato.
+     */
+    @Transactional
+    public SlotOrario creaSlotOrario(Long modalitaId, LocalDateTime dataInizio, Integer orariDisponibili) {
+        Modalita modalita = new Modalita(modalitaId);  // Assumo che Modalita abbia un costruttore con id
+        SlotOrario slotOrario = new SlotOrario();
+        slotOrario.setModalita(modalita);
+        slotOrario.setData(dataInizio);
+        slotOrario.setOrariDisponibili(orariDisponibili);
+        return creaSlotOrario(slotOrario);
+    }
+
+    /**
+     * Aggiunge una fascia oraria (slot) all'insieme esistente.
+     *
+     * @param slotOrario L'entità SlotOrario da aggiungere.
+     * @return Lo slot orario aggiornato.
+     */
+    @Transactional
+    public SlotOrario aggiungiFasciaOraria(SlotOrario slotOrario) {
+        validaSlotOrario(slotOrario);
+        return slotOrarioRepository.save(slotOrario);
+    }
+
+    /**
+     * Prenota una fascia oraria (slot) specifica.
+     *
+     * @param slotOrario L'entità SlotOrario da prenotare.
+     * @return Lo slot orario aggiornato dopo la prenotazione.
+     */
+    @Transactional
+    public SlotOrario prenotaFasciaOraria(SlotOrario slotOrario) {
+        slotOrario.setOrariDisponibili(slotOrario.getOrariDisponibili() - 1);  // Decrementa il numero di orari disponibili
+        return slotOrarioRepository.save(slotOrario);
+    }
+
+    /**
+     * Validazione dello slot orario.
+     */
     private void validaSlotOrario(SlotOrario slotOrario) {
         if (slotOrario.getModalita() == null) {
             throw new IllegalArgumentException("La modalità associata è obbligatoria.");

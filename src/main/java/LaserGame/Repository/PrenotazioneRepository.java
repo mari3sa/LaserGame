@@ -21,7 +21,7 @@ public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long
     List<Prenotazione> findByData(@Param("data") LocalDateTime data);
 
     List<Prenotazione> findByStatus(@Param("status") enumeration.StatoPrenotazione status);  // Restituisce le prenotazioni basate su data e stato di prenotazione
-
+    List<Prenotazione> findByUtenteId(int clienteId);
     // Trova le prenotazioni basate sulla modalità e lo stato
     List<Prenotazione> findByModalita(@Param("modalita") Modalita modalita);  // Restituisce le prenotazioni basate su modalità e stato
 

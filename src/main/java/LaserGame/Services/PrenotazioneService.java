@@ -2,8 +2,10 @@ package LaserGame.Services;
 
 import LaserGame.Entities.Modalita;
 import LaserGame.Entities.Prenotazione;
+import LaserGame.Exception.PrenotazioneInesistenteException;
 import LaserGame.Repository.PrenotazioneRepository;
 import LaserGame.Utils.enumeration;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,8 @@ public class PrenotazioneService {
     public Optional<Prenotazione> getPrenotazioneById(Long id) {
         return prenotazioneRepository.findById(id);
     }
+
+
 
     @Transactional(readOnly = true)
     // Trova prenotazioni per utente
@@ -66,6 +70,29 @@ public class PrenotazioneService {
     @Transactional(readOnly = true)
     public List<Prenotazione> findByNumeroPartecipantiLessThanEqual(Integer numeroPartecipanti) {
         return prenotazioneRepository.findByNumeroPartecipantiLessThanEqual(numeroPartecipanti);
+    }
+
+    @Transactional(readOnly = true)
+    public Prenotazione findById(long id) {
+        if (prenotazioneRepository.findById(id).isPresent()) {
+            return prenotazioneRepository.findById(id).get();
+        }
+        else
+            throw new PrenotazioneInesistenteException("Prenotazione inesistente");
+    }
+
+    @Transactional(readOnly = true)
+    public List<Prenotazione> findByCliente(int clienteId) {
+        boolean isAdmin = SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+        if (! isAdmin){
+            throw new SecurityException("Utente non autorizzato");
+        }
+        return prenotazioneRepository.findByUtenteId(clienteId);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Prenotazione> findAll() {
+        return prenotazioneRepository.findAll();
     }
 
     private void validaPrenotazione(Prenotazione prenotazione) {

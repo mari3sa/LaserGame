@@ -46,5 +46,12 @@ public class Modalita {
     @ManyToMany(mappedBy = "modalitaCoperte")
     private Set<Promozione> promozioni;
 
+    // Costruttore senza argomenti (necessario per JPA)
+    public Modalita() {}
+
+    // Costruttore con ID
+    public Modalita(Long id) {
+        this.id = id;
+    }
     // Getter & Setter (generati automaticamente da Lombok)
 }

@@ -68,8 +68,17 @@ public class InfoLaserGameService {
         return infoLaserGameRepository.existsById(id);
     }
 
-    public boolean verificaCodiceAmministratore(int codice){
-        return InfoLaserGameRepository.existsByCodiceAmministrativo(codice);
+    /**
+     * Verifica se un codice amministrativo esiste.
+     *
+     * @param codice Il codice amministrativo da verificare.
+     * @return True se esiste, False altrimenti.
+     */
+    @Transactional(readOnly = true)
+    public boolean verificaCodiceAmministratore(int codice) {
+        return infoLaserGameRepository.existsByCodiceAmministrativo(codice);
+        //si utilizza un'istanza di infoLaserGame, non il repository InfoLaserGame che è
+        // un'interfaccia di spring e di conseguenza per essere usata ha bisogno di metodi statici.
     }
 
     private void validaInfoLaserGame(InfoLaserGame infoLaserGame) {
@@ -98,5 +107,4 @@ public class InfoLaserGameService {
             throw new IllegalArgumentException("La longitudine non è valida.");
         }
     }
-
 }
