@@ -1,6 +1,7 @@
 package LaserGame.Services;
 
 import LaserGame.Entities.Utente;
+import LaserGame.Exception.ClienteInesistenteException;
 import LaserGame.Repository.UtenteRepository;
 import LaserGame.Utils.enumeration.TipoUtente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,15 @@ public class UtenteService {
     @Transactional(readOnly = true)
     public Optional<Utente> getUtenteById(Long id) {
         return utenteRepository.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Utente findById(long id) {
+        Optional<Utente> utente = utenteRepository.findById(id);
+        if (utente.isEmpty()) {
+            throw new ClienteInesistenteException("Utente non trovato con ID: " + id);
+        }
+        return utente.get();
     }
 
     /**
@@ -86,6 +96,16 @@ public class UtenteService {
         amministratore.setTelefono(telefono);
         amministratore.setTipo(LaserGame.Utils.enumeration.TipoUtente.ADMIN);
         return utenteRepository.save(amministratore);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Utente> findAmministratoreUtente() {
+        return utenteRepository.findByTipo(TipoUtente.ADMIN);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Utente> findUserUtente() {
+        return utenteRepository.findByTipo(TipoUtente.CLIENTE);
     }
 
     /**

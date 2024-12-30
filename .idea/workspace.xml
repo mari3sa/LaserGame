@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="controllare lasergamerepository">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/PrenotazioneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/SlotOrarioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/FasciaOrariaInesistenteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/PrenotazioneInesistenteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LaserGameApplication.java" afterDir="false" />
+    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="finire controller">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/LaserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/ClienteInesistenteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/DatiAziendaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/FasciaOrariaSaturaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/ModalitaInesistenteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Exception/PagamentoInesistenteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/PrenotazioneRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/InfoLaserGameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/InfoLaserGameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/PrenotazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Controller/PrenotazioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Prenotazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/SlotOrario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/SlotOrario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/SlotOrarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/SlotOrarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/InfoLaserGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/InfoLaserGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/ModalitaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/ModalitaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PagamentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PagamentoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/SlotOrarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/SlotOrarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/UtenteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/UtenteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Utils/UtenteRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,13 +70,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.LaserGameApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/39388/IdeaProjects/LaserGame/src/main/resources",
+    "last_opened_file_path": "C:/Users/39388/IdeaProjects/LaserGame",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,6 +90,11 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -105,7 +123,8 @@
       <workItem from="1734952008306" duration="2305000" />
       <workItem from="1734959358829" duration="11264000" />
       <workItem from="1735223186548" duration="1976000" />
-      <workItem from="1735313946899" duration="6186000" />
+      <workItem from="1735313946899" duration="6285000" />
+      <workItem from="1735569337458" duration="7395000" />
     </task>
     <task id="LOCAL-00001" summary="file pom, properties e prime entity">
       <option name="closed" value="true" />
@@ -155,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735225170802</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finire controller">
+      <option name="closed" value="true" />
+      <created>1735322606985</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735322606985</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +205,7 @@
     <MESSAGE value="services" />
     <MESSAGE value="carrello, articolo carrello, pagamento, spring jwt, primi controller, security" />
     <MESSAGE value="controllare lasergamerepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="controllare lasergamerepository" />
+    <MESSAGE value="finire controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="finire controller" />
   </component>
 </project>

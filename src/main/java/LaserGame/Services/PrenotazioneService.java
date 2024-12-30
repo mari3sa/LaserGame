@@ -1,7 +1,6 @@
 package LaserGame.Services;
 
-import LaserGame.Entities.Modalita;
-import LaserGame.Entities.Prenotazione;
+import LaserGame.Entities.*;
 import LaserGame.Exception.PrenotazioneInesistenteException;
 import LaserGame.Repository.PrenotazioneRepository;
 import LaserGame.Utils.enumeration;
@@ -10,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -89,6 +89,56 @@ public class PrenotazioneService {
         }
         return prenotazioneRepository.findByUtenteId(clienteId);
     }
+
+    @Transactional
+    public void creaPrenotazioneModalita(Utente utente, Modalita modalita, LocalDateTime data) {
+        Prenotazione prenotazione = new Prenotazione();
+        prenotazione.setData(data);
+        prenotazione.setStatus(enumeration.StatoPrenotazione.CONFERMATA);
+        prenotazione.setModalita(modalita); // Collegamento alla modalità
+        prenotazione.setUser(utente); // Collegamento all'utente
+
+        validaPrenotazione(prenotazione);
+
+        prenotazioneRepository.save(prenotazione);
+    }
+
+    @Transactional
+    public void creaPrenotazionePromozione(Utente utente, Promozione promozione, LocalDateTime data) {
+        Prenotazione prenotazione = new Prenotazione();
+
+        // Imposta i dettagli della prenotazione
+        prenotazione.setData(data);
+        prenotazione.setStatus(enumeration.StatoPrenotazione.CONFERMATA);
+        prenotazione.setPromozione(promozione); // Associa la promozione alla prenotazione
+        prenotazione.setUser(utente); // Associa l'utente alla prenotazione
+
+        // Valida la prenotazione prima del salvataggio
+        validaPrenotazione(prenotazione);
+
+        // Salva la prenotazione nel repository
+        prenotazioneRepository.save(prenotazione);
+    }
+
+    @Transactional
+    public void creaPrenotazioneAbbonamento(Utente utente, Abbonamento abbonamento, LocalDateTime data) {
+        Prenotazione prenotazione = new Prenotazione();
+
+        // Imposta i dettagli della prenotazione
+        prenotazione.setData(data);
+        prenotazione.setStatus(enumeration.StatoPrenotazione.CONFERMATA);
+        prenotazione.setAbbonamento(abbonamento); // Associa l'abbonamento alla prenotazione
+        prenotazione.setUser(utente); // Associa l'utente alla prenotazione
+
+        // Valida la prenotazione prima del salvataggio
+        validaPrenotazione(prenotazione);
+
+        // Salva la prenotazione nel repository
+        prenotazioneRepository.save(prenotazione);
+    }
+
+
+
 
     @Transactional(readOnly = true)
     public List<Prenotazione> findAll() {

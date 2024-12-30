@@ -27,6 +27,14 @@ public class Prenotazione {
     private Utente user;
 
     @ManyToOne
+    @JoinColumn(name = "id_promozione")
+    private Promozione promozione;
+
+    @ManyToOne
+    @JoinColumn(name = "id_abbonamento")
+    private Abbonamento abbonamento;
+
+    @ManyToOne
     @JoinColumn(name = "id_modalita")
     private Modalita modalita;
 

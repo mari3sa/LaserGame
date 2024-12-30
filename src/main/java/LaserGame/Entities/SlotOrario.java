@@ -30,5 +30,9 @@ public class SlotOrario{
     @Column(nullable = false)
     private Integer orariDisponibili;
 
+    @Column(name = "prenotata", nullable = false)
+    private boolean prenotata = false;
+
+
     // Getter & Setter
 }

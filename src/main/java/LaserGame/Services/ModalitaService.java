@@ -1,6 +1,7 @@
 package LaserGame.Services;
 
 import LaserGame.Entities.Modalita;
+import LaserGame.Exception.ModalitaInesistenteException;
 import LaserGame.Repository.ModalitaRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,11 @@ public class ModalitaService {
     @Autowired
     private ModalitaRepository modalitaRepository;
 
+    @Transactional(readOnly = true)
+    public List<Modalita> findAll() {
+        return modalitaRepository.findAll();
+    }
+
     @Transactional
     // Trova tutte le modalità
     public List<Modalita> getAllModalita() {
@@ -23,11 +29,14 @@ public class ModalitaService {
     }
 
     @Transactional(readOnly = true)
-    // Trova una modalità per ID
-    public Optional<Modalita> getModalitaById(Long id) {
-        return modalitaRepository.findById(id);
+    public Modalita findById(long id) {
+        if (modalitaRepository.findById(id).isPresent()){
+            return modalitaRepository.findById(id).get();
+        }
+        else {
+            throw new ModalitaInesistenteException("Pacchetto non trovato");
+        }
     }
-
     @Transactional(readOnly = true)
     // Trova modalità per nome
     public List <Modalita> findByNome(String nome) {

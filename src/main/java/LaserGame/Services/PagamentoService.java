@@ -2,6 +2,7 @@ package LaserGame.Services;
 
 import LaserGame.Entities.Pagamento;
 import LaserGame.Entities.Utente;
+import LaserGame.Exception.PagamentoInesistenteException;
 import LaserGame.Repository.PagamentoRepository;
 import LaserGame.Utils.enumeration.StatoPagamento;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,16 +46,15 @@ public class PagamentoService {
         return pagamentoRepository.save(pagamento);
     }
 
-    /**
-     * Trova un pagamento per ID.
-     *
-     * @param pagamentoId ID del pagamento.
-     * @return Pagamento trovato o vuoto se non esiste.
-     */
     @Transactional(readOnly = true)
-    public Optional<Pagamento> trovaPagamentoPerId(Long pagamentoId) {
-        return pagamentoRepository.findById(pagamentoId);
+    public Pagamento findById(long id) {
+        if (pagamentoRepository.findById(id).isPresent()) {
+            return pagamentoRepository.findById(id).get();
+        } else
+            throw new PagamentoInesistenteException("Pagamento inesistente");
     }
+
+
 
     /**
      * Trova tutti i pagamenti di un utente specifico.

@@ -3,6 +3,7 @@ package LaserGame.Services;
 import LaserGame.Entities.Modalita;
 import LaserGame.Entities.SlotOrario;
 import LaserGame.Exception.FasciaOrariaInesistenteException;
+import LaserGame.Exception.FasciaOrariaSaturaException;
 import LaserGame.Repository.SlotOrarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -129,8 +130,21 @@ public class SlotOrarioService {
      */
     @Transactional
     public SlotOrario prenotaFasciaOraria(SlotOrario slotOrario) {
-        slotOrario.setOrariDisponibili(slotOrario.getOrariDisponibili() - 1);  // Decrementa il numero di orari disponibili
-        return slotOrarioRepository.save(slotOrario);
+        Optional<SlotOrario> fasciaOrariaOptional = slotOrarioRepository.findByIdWithLock(slotOrario.getId());
+        if (fasciaOrariaOptional.isEmpty()) {
+            throw new FasciaOrariaInesistenteException("Fascia Oraria non trovata");
+        }
+        SlotOrario fasciaOraria = fasciaOrariaOptional.get();
+        if (fasciaOraria.isPrenotata()) {
+            throw new FasciaOrariaSaturaException("Fascia Oraria al completo");
+        }
+        fasciaOraria.setPrenotata(true);
+        try {
+            slotOrarioRepository.save(fasciaOraria);
+        } catch (Exception e) {
+            throw e;
+        }
+        return fasciaOraria;
     }
 
     /**

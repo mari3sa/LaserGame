@@ -3,6 +3,7 @@ package LaserGame.Controller;
 import LaserGame.Entities.Modalita;
 import LaserGame.Entities.Prenotazione;
 import LaserGame.Services.PrenotazioneService;
+import LaserGame.Utils.PrenotazioneRequest;
 import LaserGame.Utils.enumeration.StatoPrenotazione;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,39 @@ public class PrenotazioneController {
 
     @Autowired
     private PrenotazioneService prenotazioneService;
+
+    @PostMapping("/creaPP")
+    public ResponseEntity<?> creaPrenotazioneModalita(@RequestBody PrenotazioneRequest request) {
+        try {
+            System.out.println("Dentro crea prenotazione");
+            prenotazioneService.creaPrenotazioneModalita(request.getUtente(), request.getModalita(), request.getData());
+            return ResponseEntity.status(HttpStatus.CREATED).body("Prenotazione pacchetto creata con successo");
+        } catch (IllegalArgumentException | SecurityException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/creaPP")
+    public ResponseEntity<?> creaPrenotazionePromozione(@RequestBody PrenotazioneRequest request) {
+        try {
+            System.out.println("Dentro crea prenotazione promozione");
+            prenotazioneService.creaPrenotazionePromozione(request.getUtente(), request.getPromozione(), request.getData());
+            return ResponseEntity.status(HttpStatus.CREATED).body("Prenotazione promozione creata con successo");
+        } catch (IllegalArgumentException | SecurityException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/creaAbbonamento")
+    public ResponseEntity<?> creaPrenotazioneAbbonamento(@RequestBody PrenotazioneRequest request) {
+        try {
+            System.out.println("Dentro crea prenotazione abbonamento");
+            prenotazioneService.creaPrenotazioneAbbonamento(request.getUtente(), request.getAbbonamento(), request.getData());
+            return ResponseEntity.status(HttpStatus.CREATED).body("Prenotazione abbonamento creata con successo");
+        } catch (IllegalArgumentException | SecurityException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
 
 
     @GetMapping("/{id}")

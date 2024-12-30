@@ -1,7 +1,9 @@
 package LaserGame.Services;
 
 import LaserGame.Entities.InfoLaserGame;
+import LaserGame.Exception.DatiAziendaException;
 import LaserGame.Repository.InfoLaserGameRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -80,6 +82,36 @@ public class InfoLaserGameService {
         //si utilizza un'istanza di infoLaserGame, non il repository InfoLaserGame che è
         // un'interfaccia di spring e di conseguenza per essere usata ha bisogno di metodi statici.
     }
+
+    public InfoLaserGame aggiornaDatiInfoLaserGame(InfoLaserGame infoLaserGame) {
+        boolean isAdmin = SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+                .anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+        if (!isAdmin) {
+            throw new SecurityException("Utente non autorizzato");
+        }
+
+        // Supponiamo che l'entità InfoLaserGame abbia un solo record con ID 1
+        Optional<InfoLaserGame> existingInfoLaserGame = infoLaserGameRepository.findById(1L);
+        if (existingInfoLaserGame.isEmpty()) {
+            throw new DatiAziendaException("Dati dell'info LaserGame non trovati");
+        }
+
+        InfoLaserGame infoLaserToUpdate = existingInfoLaserGame.get();
+        infoLaserToUpdate.setNome(infoLaserGame.getNome());
+        infoLaserToUpdate.setEmail(infoLaserGame.getEmail());
+        infoLaserToUpdate.setIndirizzo(infoLaserGame.getIndirizzo());
+        infoLaserToUpdate.setCitta(infoLaserGame.getCitta());
+        infoLaserToUpdate.setPaese(infoLaserGame.getPaese());
+        infoLaserToUpdate.setCodicePostale(infoLaserGame.getCodicePostale());
+        infoLaserToUpdate.setLatitude(infoLaserGame.getLatitude());
+        infoLaserToUpdate.setLongitude(infoLaserGame.getLongitude());
+        infoLaserToUpdate.setCodice_amministrativo(infoLaserGame.getCodice_amministrativo());
+
+        validaInfoLaserGame(infoLaserToUpdate);
+
+        return infoLaserGameRepository.save(infoLaserToUpdate);
+    }
+
 
     private void validaInfoLaserGame(InfoLaserGame infoLaserGame) {
         if (infoLaserGame.getNome() == null || infoLaserGame.getNome().trim().isEmpty()) {

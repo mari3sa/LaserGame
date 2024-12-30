@@ -25,6 +25,6 @@ public interface SlotOrarioRepository extends JpaRepository<SlotOrario, Long> {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT f FROM SlotOrario f WHERE f.id = :id")
-    Optional<SlotOrario> findByIdWithLock(@Param("id") int id);
+    Optional<SlotOrario> findByIdWithLock(@Param("id") long id);
 
 }
