@@ -63,7 +63,7 @@ public class PagamentoService {
      * @return Lista di pagamenti dell'utente.
      */
     @Transactional(readOnly = true)
-    public List<Pagamento> trovaPagamentiPerUtente(Long utenteId) {
+    public List<Pagamento> trovaPagamentiPerUtente(Utente utenteId) {
         return pagamentoRepository.findByUtenteId(utenteId);
     }
 

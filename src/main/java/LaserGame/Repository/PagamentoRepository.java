@@ -1,6 +1,7 @@
 package LaserGame.Repository;
 
 import LaserGame.Entities.Pagamento;
+import LaserGame.Entities.Utente;
 import LaserGame.Utils.enumeration.StatoPagamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface PagamentoRepository extends JpaRepository<Pagamento, Long> {
 
     // Trova pagamenti per utente
-    List<Pagamento> findByUtenteId(Long utenteId);
+    List<Pagamento> findByUtenteId(Utente utenteId);
 
     // Trova pagamenti per stato
     List<Pagamento> findByStato(StatoPagamento stato);

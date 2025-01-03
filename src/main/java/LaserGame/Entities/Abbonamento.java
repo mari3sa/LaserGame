@@ -42,13 +42,10 @@ public class Abbonamento {
     private BigDecimal prezzo;
 
     // Relazione con Modalita
-    @ManyToMany
-    @JoinTable(
-            name = "abbonamento_modalita",
-            joinColumns = @JoinColumn(name = "id_abbonamento"),
-            inverseJoinColumns = @JoinColumn(name = "id_modalita")
-    )
-    private Set<Modalita> modalitaDisponibili;
+    @ManyToOne
+    @JoinTable(name = "modalita_id")
+
+    private Modalita modalitaSet;
 
 }
 

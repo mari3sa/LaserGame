@@ -36,11 +36,11 @@ public class Modalita {
     @Column(nullable = false)
     private Integer numeroMaxPartecipanti;
 
-    @OneToMany(mappedBy = "laserGamePackage", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "modalita")
     private Set<SlotOrario> slotAvailabilities;
 
-    // Relazione ManyToMany con Abbonamento
-    @ManyToMany(mappedBy = "modalitaSet")
+
+    @OneToMany(mappedBy = "modalitaSet")
     private Set<Abbonamento> abbonamenti;
 
     @ManyToMany(mappedBy = "modalitaCoperte")

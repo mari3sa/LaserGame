@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment="fine backend, mancanti package json">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/DataSourceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/JpaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="0fd8626d-1ccf-4a3c-9b37-667ecdba1046" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Abbonamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/Modalita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/SlotOrario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Entities/SlotOrario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/ArticoloCarrelloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/ArticoloCarrelloRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/CarrelloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/CarrelloRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PagamentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PagamentoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Repository/PrenotazioneRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Authentication/JwtAuthenticationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Authentication/JwtAuthenticationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/DataSourceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/EncodingConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/EncodingConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/JpaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/JpaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Security/Configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PagamentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PagamentoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LaserGame/Services/PrenotazioneService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LaserGameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LaserGameApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -52,36 +63,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.LaserGameApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/39388/IdeaProjects/LaserGame&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.LaserGameApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/39388/IdeaProjects/LaserGame",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\39388\IdeaProjects\LaserGame\src\main\resources" />
@@ -121,7 +133,9 @@
       <workItem from="1735313946899" duration="6285000" />
       <workItem from="1735569337458" duration="7708000" />
       <workItem from="1735674576339" duration="4608000" />
-      <workItem from="1735904538153" duration="730000" />
+      <workItem from="1735904538153" duration="6731000" />
+      <workItem from="1735920335904" duration="2167000" />
+      <workItem from="1735922645957" duration="1733000" />
     </task>
     <task id="LOCAL-00001" summary="file pom, properties e prime entity">
       <option name="closed" value="true" />
@@ -187,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735578541543</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary=".">
+      <option name="closed" value="true" />
+      <created>1735905745125</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735905745125</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +234,7 @@
     <MESSAGE value="controllare lasergamerepository" />
     <MESSAGE value="finire controller" />
     <MESSAGE value="fine backend, mancanti package json" />
-    <option name="LAST_COMMIT_MESSAGE" value="fine backend, mancanti package json" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

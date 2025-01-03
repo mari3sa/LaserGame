@@ -20,8 +20,8 @@ public class SlotOrario{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "package_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "modalita_id")
     private Modalita modalita;
 
     @Column(nullable = false)

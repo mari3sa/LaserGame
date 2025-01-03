@@ -36,7 +36,7 @@ public class PrenotazioneService {
 
     @Transactional(readOnly = true)
     // Trova prenotazioni per utente
-    public List<Prenotazione> getPrenotazioniByUtenteId(Long utenteId) {
+    public List<Prenotazione> getPrenotazioniByUtenteId(Utente utenteId) {
         return prenotazioneRepository.findByUserId(utenteId);
     }
 
